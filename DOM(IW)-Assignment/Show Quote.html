@@ -1,0 +1,19 @@
+<!-- Question-On clicking on button, display the quote given in p tag in console -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+           Document
+        </title>
+    </head>
+    <body>
+        <button onclick="pTag()">Show Quote in console</button>
+        <p id="quote">Talk is cheap show me the code</p>
+    </body>
+</html>
+<script>
+let tagFeatch=document.getElementById("quote");
+function pTag(){
+    console.log(tagFeatch.innerText)
+}
+</script>
