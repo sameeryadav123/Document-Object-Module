@@ -1,0 +1,125 @@
+
+
+<!-- Complete all the functions by creating a copy of the above template with the file name registration.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registration</title>
+    </head>
+    <body>
+        <input type="text" name="name" id="name">
+        <select id="genders">
+            <option value=""></option>
+            <option value="Male">Male</option>
+            <option value="Female">Famale</option>
+        </select>
+        <input type="text" id="email" name="email" >
+        <input type="text" id="mobile" name="mobile" >
+        <hr>
+        <h1 id="dName">NAME</h1>
+        <h2 id="dGender">GENDER</h2>
+        <h3 id="dEmail">EMAIL</h3>
+        <h4 id="dMobile">MOBILE</h4>
+
+        <button onclick="showName()">Name</button>
+        <button onclick="showGender()">Gender</button>
+        <button onclick="showEmail()">Email</button>
+        <button onclick="showMobile()">Mobile</button>
+        <button onclick="resetForm()">RESET FORM</button>
+        <button onclick="resetDiplay()">RESET DISPLAY</button>
+    </body>
+</html>
+
+<script>
+
+// This is input tag  accesing  with the help of document.getElementById
+    let inputName=document.getElementById("name");
+    let inputGender=document.getElementById("genders")
+    let inputEmail=document.getElementById("email")
+    let inputMobileNumber=document.getElementById("mobile")
+
+    // ============================================================//
+    // This is heading tag accessing with help of document.getElementById
+
+    let headingName=document.getElementById("dName")
+    let headingGender=document.getElementById("dGender")
+    let headingEmail=document.getElementById("dEmail")
+    let headingMobile=document.getElementById("dMobile")
+
+
+
+    function showName(){
+
+    //      let person=headingName.innerText;
+    //    let infoName =inputName.value;
+    //    console.log(person+":"+infoName)
+
+       console.log(headingName.innerText+":"+inputName.value)
+    }
+  
+
+    let showGender=()=>{
+        // let presonGenders=headingGender.innerText;
+        // let infoGen=inputGender.value;
+        // console.log(presonGenders+":"+infoGen)
+
+        console.log(headingGender.innerText+":"+inputGender.value)
+    }
+  
+    let showEmail=()=>{
+        // let personEmail=headingEmail.innerText;
+        // let infoEmi=inputEmail.value;
+        // console.log(personEmail+":"+infoEmi)
+
+        console.log(headingEmail.innerText+":"+inputEmail.value)
+    }
+
+    let showMobile=()=>{
+        // let presonMobile=headingMobile.innerText;
+        // let infoNum=inputMobileNumber.value;
+        // console.log(presonMobile+":"+infoNum)
+
+        console.log(headingMobile.innerText+":"+inputMobileNumber.value)
+    }
+
+    let resetForm=()=>{
+        let person=headingName.innerText;
+       let infoName =inputName.value="";
+       console.log(person+":"+infoName)
+
+        let personEmail=headingEmail.innerText;
+        let infoEmi=inputEmail.value="";
+        console.log(personEmail+":"+infoEmi)
+
+        let presonMobile=headingMobile.innerText;
+        let infoNum=inputMobileNumber.value="";
+        console.log(presonMobile+":"+infoNum)
+
+        let presonGenders=headingGender.innerText;
+        let infoGen=inputGender.value;
+        console.log(presonGenders+":"+infoGen)
+
+    }
+
+    let resetDiplay=()=>{
+        let person=headingName.innerText="";
+       let infoName =inputName.value="";
+       console.log(person,infoName)
+
+        let personEmail=headingEmail.innerText="";
+        let infoEmi=inputEmail.value="";
+        console.log(personEmail,infoEmi)
+
+        let presonMobile=headingMobile.innerText="";
+        let infoNum=inputMobileNumber.value="";
+        console.log(presonMobile,infoNum)
+
+        let presonGenders=headingGender.innerText="";
+        let infoGen=inputGender.value="";
+        console.log(presonGenders,infoGen)
+
+    }
+      
+
+    </script>
