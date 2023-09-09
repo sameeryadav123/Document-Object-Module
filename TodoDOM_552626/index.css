@@ -89,3 +89,13 @@ h1 {
   color: #2b619e;
   text-decoration: underline;
 }
+
+
+#high{
+  background-color: green;
+  color: black;
+}
+#low{
+  background-color: red;
+  color: white;
+}
