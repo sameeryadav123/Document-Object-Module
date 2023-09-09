@@ -32,6 +32,7 @@ myForm.addEventListener("submit",function(e){
     // creating array because want to attration on a array with help of loop
 
     let data=[name,employeeID,department,experience,email,mobile,role];
+   
 
     data.forEach((ele) => {
         

@@ -5,6 +5,7 @@ table {
   margin: auto;
   margin-top: 50px;
   text-align: center;
+  
 }
 
 table td,
@@ -12,4 +13,76 @@ table th {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
+  
+}
+h1{
+  text-align: center;
+  color: rgb(5,103,172);
+  text-decoration: underline;
+  
+}
+#submit{
+  margin-top:10px ;
+  border-radius: 10px;
+  width: 290px;
+  padding: 8px;
+  background-color:rgb(5,103,172) ;
+  color: white;
+}
+
+#tableInfo{
+
+ 
+  padding: 5px;
+ 
+  
+  /* border: 1px solid rgb(206, 21, 21); */
+}
+tr>th{
+  background-color: rgb(5,103,172);
+  color: white;
+
+ 
+}
+
+#inputvalue{
+  
+margin-top: 55px;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+
+}
+#parent{
+  display: flex;
+  justify-content:center;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+form>input{
+  margin-top: 10px;
+  background-color:white;
+  color: black;
+  padding: 8px;
+  width: 250px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+  border-radius: 5px ;
+}
+form>label{
+  color: black;
+  margin-top: 10px;
+}
+select {
+  border-radius: 5px ;
+  width: 270px;
+  padding: 8px;
+  background-color:white;
+  color: black;
+  margin-bottom: 10px;
+  border: 2px solid black;
+  
+
 }
