@@ -58,3 +58,10 @@ myForm.addEventListener("submit",function(e){
 
     tbody.appendChild(row)
 })
+
+
+
+function  yes (){
+    console.log("ookk")
+}
+yes();
