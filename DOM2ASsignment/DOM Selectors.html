@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise Selectors</title>
+    <style>
+        #parent{
+            /* border: 1px solid red; */
+            display: flex;
+            font-family:Arial, Helvetica, sans-serif ;
+        }
+        .btns{
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: auto auto auto ;
+            margin: 10px;
+            padding: 10px;
+            gap:10px;
+            margin-right: 150px;
+            border-radius: 10px;
+            
+        }
+        .btns>button{
+            border-radius: 10px;
+            height:100px ;
+            width: 150px;
+            padding: 10px;
+          
+        }
+        .content{
+            margin-left: 200px;
+        }
+        </style>
+</head>
+<body>
+  <div id="parent">
+      <div class="content">
+
+          <h1>First H1</h1>
+          <h1>Second H1</h1>
+          <h3>First H3</h3>
+          <h3>Second H3</h3>
+          <h5>First H5</h5>
+          <h5>Second H5</h5>
+          <h5>Third H5</h5>
+          <div class="green">First DIV</div>
+          <div class="red">Second DIV</div>
+          <div class="blue">Third DIV</div>
+          <p class="green">First P</p>
+          <p class="red">Second P</p>
+          <p class="blue">Third P</p>
+      </div>
+      <hr />
+      <div class="btns">
+
+          <button onClick="changeH1()">Change H1</button>
+          <button onClick="changeH3()">Change H3</button>
+          <button onClick="changeH5()">Change H5</button>
+          <button onClick="changeGreen()">Change Green</button>
+          <button onClick="changeRed()">Change Red</button>
+          <button onClick="changeBlue()">Change Blue</button>
+      </div>
+
+  </div>
+  <script>
+     
+    function changeH1() {
+      // the colour of first <h1> should turn to red
+          let headingH1=document.querySelector("h1")
+          headingH1.style.color="red"
+    }
+
+    function changeH3() {
+      // the colour of all <h3> should turn to green
+          let headingH3=document.querySelectorAll(".content >  h3");
+         
+          headingH3.forEach((ele)=>{
+          ele.style.color="green";
+          })
+    }
+
+    function changeH5() {
+      // the colour of all <h5> should turn to blue
+          let headingH5=document.querySelectorAll(".content > h5");
+
+          headingH5.forEach((ele) =>{
+
+              ele.style.color="blue"
+          })
+    }
+
+    function changeGreen() {
+      // all the elements with the class green should change to green
+      let changeGreenColor=document.querySelectorAll("div > .green")
+      changeGreenColor.forEach((ele)=>{
+
+          ele.style.color="green";
+      })
+    }
+
+    function changeRed() {
+      // all the elements with the class red should change to red
+      let changeRedColor=document.querySelectorAll("div > .red")
+      changeRedColor.forEach((ele)=>{
+
+          ele.style.color="red";
+      })
+    }
+
+    function changeBlue() {
+      // all the elements with the class blue should change to blue
+      let changeBlueColor=document.querySelectorAll("div > .blue");
+      changeBlueColor.forEach((ele)=>{
+
+          ele.style.color="blue"
+      })
+    }
+  </script>
+</body>
+
+</html>
+<
+<!-- Complete the functionality in the file selectors.html
+
+On clicking the button Change H1 the colour of first <h1> should turn to red
+On clicking the button Change H3 the colour of all <h3> should turn to green
+On clicking the button Change H5 the colour of all <h5> should turn to blue
+On clicking Change Green all the elements with the class green should change to green
+On clicking Change Blue all the elements with the class blue should change to blue
+On clicking Change Red all the elements with the class red should change to red -->
