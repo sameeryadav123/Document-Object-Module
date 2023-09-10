@@ -1,0 +1,151 @@
+<!-- MASAI CALCULATOR RETURNS DOM
+Complete the functionality part of Masai calculator -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid calculating</title>
+    <style>
+        *{
+            margin: auto;
+            padding: auto;
+            text-align: center;
+        }
+        .container{
+        
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+           width: 250px;
+           height: 350px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+        .gridOperator{
+            margin-top: 10px;
+            display: grid;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid blue;
+        }
+        .container>button{
+            text-align: center;
+            height: 50px;
+            width: 50px;
+            margin: 8px;
+            border-radius: 5px;
+            color: black;
+            background-color: white;
+            cursor: pointer;
+        }
+        h1{
+            margin-top: 70px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            /* border: 1px solid black; */
+            width: 260px;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1 id="display"></h1>
+    <div class="container">
+       
+    <button class="keypadBtn">1</button>
+    <button class="keypadBtn">2</button>
+    <button class="keypadBtn">3</button>
+    <button class="operator">+</button>
+    <button class="keypadBtn">4</button>
+    <button class="keypadBtn">5</button>
+    <button class="keypadBtn">6</button>
+    <button class="operator">-</button>
+    <button class="keypadBtn">7</button>
+    <button class="keypadBtn">8</button>
+    <button class="keypadBtn">9</button>
+    <button class="operator">X</button>
+    <button class="keypadBtn">0</button>
+
+    <button id="equal">=</button>
+    <button id="clear">Clear</button>
+    <button class="operator">/</button>  
+    </div>
+    
+  
+</body>
+<script>
+
+let headingH1=document.querySelector("#display");
+let keypadBtns=document.querySelectorAll(".container > .keypadBtn");
+let operator=document.querySelectorAll(".container > .operator");
+let equal=document.querySelector("#equal");
+let clear=document.querySelector("#clear")
+
+let firstNumber="";
+let secondNumber="";
+let IsFirstNumber=true;
+let operators="";
+
+for(let i=0; i<keypadBtns.length;i++){
+    keypadBtns[i].addEventListener("click",function(){
+
+        if(IsFirstNumber == true){
+            firstNumber+=keypadBtns[i].innerText;
+            headingH1.innerText=firstNumber;
+        }
+        else{
+            secondNumber+=keypadBtns[i].innerText;
+            headingH1.innerText=secondNumber;
+        }
+    })
+}
+
+
+for(let j=0; j<operator.length;j++){
+    operator[j].addEventListener("click",function(){
+
+        IsFirstNumber=false;
+        operators+=operator[j].innerText;
+        headingH1.innerText=operators
+
+    })
+}
+
+let calculate=(firstNumber,secondNumber,operators)=>{
+    switch(operators){
+        case "+":
+        return Number(firstNumber) + Number(secondNumber)    
+
+        case "-":
+        return Number(firstNumber) - Number(secondNumber)  
+
+        case "X":
+        return Number(firstNumber) * Number(secondNumber)  
+
+        case "/":
+        return Number(firstNumber) / Number(secondNumber)  
+
+        
+    }
+}
+
+equal.addEventListener("click",function(){
+    headingH1.innerText=calculate(firstNumber,secondNumber,operators)
+
+})
+
+clear.addEventListener("click",function(){
+headingH1.innerText="";
+firstNumber="";
+secondNumber="";
+operators="";
+IsFirstNumber=true
+})
+
+</script>
+</html>
