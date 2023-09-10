@@ -1,0 +1,70 @@
+<!-- Create an application which calculates BMI (Body Mass Index)
+Your app should have 2 input boxes
+Take weight in kgs from user
+Take height in meters from user
+Based on entered height and weight calculate BMI of that person
+Here is the formula for manually calculating BMI  BMI = (weight) / (height * height)
+From the obtained BMI result, display whether the person is
+UnderWeight - bmi <= 18.4
+Normal Weight - bmi >= 18.5 && bmi <= 24.9
+Overweight - bmi >= 25 && bmi <= 29.9 -->
+<!-- Obese - bmi >= 30 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CALCULATOR</title>
+</head>
+<body>
+    <div id="parent">
+        <h1>Check Your BMI</h1>
+        <p>Enter your weight and height below to check your BMI results</p>
+        <br>
+        <p>Put your weight in here (KG)</p>
+        <input type="text" id="kilo_gram">
+        <br>
+        <p>And your Height in here (CM) </p>
+        <input type="text" id="height_cm">
+        <br>
+        <button  onClick="bmiCalculation()">Calculate BMI</button>
+
+        <h3 id="output"></h3>
+    </div>
+    <script>
+ 
+       
+      
+    
+        function bmiCalculation(){
+            let weight = parseFloat(document.getElementById("kilo_gram").value);
+            let height = parseFloat(document.getElementById("height_meters").value);
+            let headingH3 = document.getElementById("output").value;
+
+
+         
+
+           if(!isNaN(weight) && !isNaN(height)){
+
+               let bmi=weight / (height*height);
+               headingH3.innerText="Your BMI is"+bmi.value;
+
+               let cat;
+               if(bmi <= 18.4){
+                cat= "UnderWeight"
+               }
+               else if(bmi >=18.5 && bmi <=24.9){
+                cat= "Normal Weight"
+               }
+               else if(bmi >=25 && bmi <=29.9){
+                cat="Overweight "
+               }
+               else if (bmi >=30){
+                cat="Obse"
+               }
+               headingH3.innerText+=" "+cat;
+           }
+
+        }
+    </script>
+</body>
